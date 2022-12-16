@@ -1,0 +1,30 @@
+<div style="background-color: skyblue; width:100%; height: auto">
+    <form style="text-align: center;" method="post">
+        {% csrf_token %}
+
+        <h1>Student Details</h1>
+
+        <label for="sname">Student Name</label>
+        <input type="text" id="sname" name="sname"><br><br>
+        
+        <label for="rollno">Roll No.</label>
+        <input type="text" id="rollno" name="rollno"><br><br>
+
+        <label for="ftname">Father's Name</label>
+        <input type="text" id="ftname" name="ftname"><br><br>
+
+        <label for="pf">Pass/Fail - </label><br>
+        <input type="radio" id="pf" name="pf" value="pass"/>Pass<br>
+        <input type="radio" id="pf" name="pf" value="fail"/>Fail<br><br>
+
+        <button onclick="mystu()"> Submit</button>
+
+    </form>
+
+</div>
+
+<script>
+    function mystu() {
+        alert("Data Submitted Successfully !");
+    }
+</script>

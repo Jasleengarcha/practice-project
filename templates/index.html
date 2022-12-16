@@ -1,0 +1,44 @@
+<div class="mt-5">
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="uname">User Name</label>
+        <input type="text" name="uname" id="uname"><br><br>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email"><br><br>
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" name="mobile" id="mobile"><br><br>
+
+        <label for="birthday">DOB</label>
+        <input type="date" name="birthday" id="birthday"><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" name="gender" id="gender" value="Male"/>Male <br>
+        <input type="radio" name="gender" id="gender" value="Female"/>Female<br><br>
+
+        <label for="myfile">Select a File:</label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+
+        <button onclick="myfun()">Submit</button>
+
+
+        <p>uname={{uname}}</p>
+        <p>email={{email}}</p>
+        <p>mobile={{mobile}}</p>
+        <p>birthday={{birthday}}</p>
+        <p>gender={{gender}}</p>
+        <p>myfile={{myfile}}</p>
+    </form>
+
+    <div>
+        
+    </div>
+
+    <script>
+        function myfun() {
+            alert("Data Successfully Submitted !");
+        }
+    </script>
+</div>

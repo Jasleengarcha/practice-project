@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STL Online </title>
+</head>
+
+<!--Bootstrap File-->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+<!--CSS File-->
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<!--JavaScript File-->
+<script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+
+<!--Search Icon-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<body>
+
+
+    <!--Sign In Model Start-->
+    <!-- The Modal -->
+    <div class="modal" id="sign-in">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Sign In</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="container mt-3">
+              <div class="container mt-3">
+                <form action="/action_page.php">
+                  <div class="mb-3 mt-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email"
+                      style="width:450px;">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd"
+                      style="width:450px;">
+                  </div>
+                  <div class="form-check mb-3">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                    </label>
+                  </div>
+                </form>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-in">
+                  Sign In
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Sign In Model End-->
+
+    <!--Sign Up Model Start-->
+    <!-- The Modal -->
+    <div class="modal" id="sign-up">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title" style="text-align: center;">Sign Up</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="container mt-3">
+              <div class="container mt-3">
+                <form>
+                  <div class="mb-3 mt-3">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="Enter Firstname" name="fname"
+                      required style="width:450px;">
+                  </div>
+                  <div class="mb-3">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="Enter Lastname" name="lname"
+                      required style="width:450px;">
+                  </div>
+                  <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="signup-mail" placeholder="Enter Email" name="email"
+                      required onkeyup="mail_validation()" style="width:450px;">
+                    <p id="mail"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label for="mobile_no">Mobile Number</label>
+                    <input type="tel" class="form-control" id="mobile_no" placeholder="Enter Mobile Number"
+                      name="mobile_no" required style="width:450px;">
+                    <p id="mobile"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="signup-pass" placeholder="Enter Password"
+                      name="password" required onkeyup="password_validation()" style="width:450px;">
+                    <p id="pswd"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label for="confirm-pass">Confirm Password</label>
+                    <input type="password" class="form-control" id="signup-confirm-pass"
+                      placeholder="Enter Password Again" required name="confirm-pass"
+                      onkeyup="confirm_pass_validation()" style="width:450px;">
+                    <p id="confirm-id"></p>
+                  </div>
+                </form>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sign-up">
+                  Sign Up
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Sign Up Model end-->
+
+    <!--Header Section Start-->
+    <!--Top Bar Section Start-->
+    <header class="col-12 top-bar fixed-top">
+        <div class="container h-100">
+          <div class="row h-100">
+            <div class="col-lg-3 col-6 pt-1">
+              <h3>STL Online</h3>
+            </div>
+            <div class="col-lg-7 pt-2 d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">
+              <form class="search-form">
+                <input class="form-control" type="search" placeholder="Search...">
+                <button type="submit">Search</button>
+              </form>
+            </div>
+            <div class="col-lg-2 col-6 text-end pt-3">
+              <ul style="list-style-type: none;">
+                <li class="d-inline "><a class="anchor" href='#' style="color:white;" data-bs-toggle="modal"
+                  data-bs-target="#sign-in">Sign In</a> |</li>
+                  <li class="d-inline "><a class="anchor" href='#' style="color: white;" data-bs-toggle="modal"
+                    data-bs-target="#sign-up">Sign Up</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Top Bar Section End-->
+  
+          <!--Item Bar Section Start-->
+          <div class="col-lg-12 d-none d-md-block item-bar">
+            <div class="container h-100 text-center">
+              <div class="col-lg-12 d-flex justify-content-between mb-3">
+                <div class="p-2 dropdown">
+                  <span class="dropdown-toggle" data-bs-toggle="dropdown">
+                    Men
+                  </span>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Jeans</a></li>
+                    <li><a class="dropdown-item" href="#">Trouser</a></li>
+                    <li><a class="dropdown-item" href="#">Shirts</a></li>
+                    <li><a class="dropdown-item" href="#">Accessories</a></li>
+                  </ul>
+                </div>
+                <div class="p-2 ">Women</div>
+                <div class="p-2 ">Kids</div>
+                <div class="p-2 ">Appliances</div>
+                <div class="p-2 ">Fashion</div>
+                <div class="p-2 ">Mobiles</div>
+                <div class="p-2 ">Food</div>
+                <div class="p-2 ">Grocery</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Item Bar Section End-->
+      
+      <!--Side Bar of Item Bar Start-->
+      <div class="col-12 d-lg-none side-bar">
+        <div class="offcanvas offcanvas-end" id="Menu">
+          <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Menu</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>Men</p>
+            <p>Women</p>
+            <p>Appliances</p>
+            <p>Food</p>
+            <p>Grocery</p>
+            <p>Fashion</p>
+          </div>
+        </div>
+        
+        <div class="container-fluid">
+          <i class="fa fa-bars" type="button" data-bs-toggle="offcanvas" data-bs-target="#Menu" style="color:white;"></i>
+        </div>
+      </div>
+      <!--Side Bar of Item Bar End-->
+  
+      </header>
+    
+    {% block page_content %}
+
+    {% endblock %}
+
+    <footer>
+      
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div>
+    {% if query_set %}
+    <table>
+        <tr>
+            <th>Student name</th>
+            <th>Roll No.</th>
+            <th>Father's Name</th>
+            <th>Pass/Fail</th>
+        </tr>
+        {% for qs in query_set %}
+        <tr>
+            <td>{{ qs.student_name }}</td>
+            <td> {{qs.roll_no}}</td>
+            <td>{{qs.father_name}}</td>
+            <td>{{qs.pass_fail}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+
+        {% else %}
+        <h1>Invalid
+            
+        </h1>
+        
+        {% endif %}
+        <a href="../delete?id={{query_set.roll_no}}">Delete</a>
+</div>

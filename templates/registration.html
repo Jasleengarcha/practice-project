@@ -1,0 +1,66 @@
+<form method="post">
+    {% csrf_token %}
+
+    <h1>Registration Form: </h1>
+
+    <label for="fname">First Name-</label>
+    <input type="text" name="fname" id="fname"><br><br>
+
+    <label for="lname">Last Name-</label>
+    <input type="text" name="lname" id="lname"><br><br>
+    
+    <label for="contact">Contact Number-</label>
+    <input type="tel" name="contact" id="contact"><br><br>
+
+    <label for="mail">Email ID-</label>
+    <input type="email" name="mail" id="mail"><br><br>
+
+    <label for="gendr">Gender-</label><br>
+    <input type="radio" name="gendr" id="gendr" value="Male"/>Male <br>
+    <input type="radio" name="gendr" id="gendr" value="Female"/>Female <br><br>
+
+    <label for="dob">Date of Birth-</label>
+    <input type="date" name="dob" id="dob"><br><br>
+
+    <label for="passwrd">Password</label>
+    <input type="password" name="passwrd" id="passwrd"><br><br>
+
+    <button onclick="myreg()">Submit</button>
+
+
+
+</form>
+
+
+<div>
+    {% if query_set %}
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>last name</th>
+            <th>contact</th>
+            <th>email</th>
+            <th>gender</th>
+            <th>dob</th>
+            <th>password</th>
+        </tr>
+        {% for qs in query_set %}
+        <tr>
+            <th>{{ qs.first_name }}</th>
+            <th>{{qs.last_name}}</th>
+            <th>{{qs.contact_no}}</th>
+            <th>{{qs.email_id}}</th>
+            <th>{{qs.gender}}</th>
+            <th>{{qs.dob}}</th>
+            <th>{{qs.password}}</th>
+        </tr>
+        {% endfor %}
+        </table>
+        
+        {% endif %}
+</div>
+<script>
+    function myreg() {
+        alert("Data Submitted Successfully !");
+    }
+</script>
